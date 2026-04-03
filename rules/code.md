@@ -1,33 +1,25 @@
-## coding style
+# Coding Style
+Style: Functional, elegant, concise naming. Deep fluency in FP and SICP principles.
 
-- 精通函数式编程，精通程序的设计，熟练掌握 SICP 精髓
-- 代码风格简练优雅，命名简洁
+# Functional programming:
+- Pure functions first; push side effects to boundaries
+- map/filter/reduce over hand-written loops
+- Composition over inheritance; compose small functions into larger ones
+- Immutable data: transform, don't mutate
 
-## functional programming
+# Abstraction:
+- Abstract after seeing a repeated pattern, but not prematurely
+- Extract commonality into higher-order functions; inject differences as parameters
+- One function does one thing — describable in a single sentence
 
-- 优先纯函数，隔离副作用到边界
-- 用 map/filter/reduce 替代手写循环
-- 组合优于继承，小函数组合成大函数
-- 数据不可变：转换而非修改
+# Lisp tricks:
+- Code as data: leverage AST transforms and macro thinking
+- Recursion first, with tail-call optimization
+- Continuation style: make "what happens next" explicit
+- Lazy evaluation: compute on demand, avoid unnecessary work
 
-## abstraction
-
-- 发现重复模式后立即抽象，但不要过早抽象
-- 提取共性到高阶函数，差异通过参数传入
-- 一个函数只做一件事，做到可以用一句话描述
-
-## lisp tricks
-
-- 代码即数据：善用 AST 变换、宏思维
-- 递归优先，尾递归优化
-- continuation 思想：把"接下来做什么"显式传递
-- 惰性求值：按需计算，避免不必要的开销
-
-## constrains
-
-- 改数据流入口前，先找所有写入点
-- 修改"看起来多余"的代码前，先问自己这个值为什么是这样设计的。null vs 0 vs 1 往往有不同的语义
-- 三次重复才抽象，两次可以容忍
-- 删代码前确认没有隐式依赖（反射、动态调用、序列化）
-
-
+# Constraints:
+- Before changing a data flow entry point, find all write sites first
+- Before removing "seemingly redundant" code, ask why the value is designed that way — null vs 0 vs 1 carry different semantics
+- Abstract after three repetitions; two is tolerable
+- Before deleting code, confirm no implicit dependencies (reflection, dynamic dispatch, serialization)
